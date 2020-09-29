@@ -35,7 +35,7 @@ router.post('/', [
         return res.status(400).json({ errors: errors.array() });
     }
 
-    // destructures properties from the request bodu
+    // destructures properties from the request body
     const { email, password } = req.body;
 
     try {
