@@ -1,0 +1,5 @@
+{
+  "mongoURI": "mongodb+srv://Terry123:Terry123@devconnector.lrath.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "secretToken",
+  "githubToken": "e2c027a9366b1176e12aefbc70bf50622a1b9fdb"
+}
