@@ -11,7 +11,7 @@ const Navbar = ({
   const authLinks = (
     <ul>
       <li>
-        <Link to="/profiles">Developers</Link>
+        <Link to="/profiles">Students</Link>
       </li>
       <li>
         <Link to="/posts">Posts</Link>
@@ -36,7 +36,7 @@ const Navbar = ({
   const guestLinks = (
     <ul>
       <li>
-        <Link to="/profiles">Developers</Link>
+        <Link to="/profiles">Students</Link>
       </li>
       <li>
         <Link to="/register">Register</Link>
@@ -51,10 +51,7 @@ const Navbar = ({
     <div>
       <nav className="navbar bg-dark">
         <h1>
-          <Link to="/">
-            <i className="fas fa-code"></i>
-            UCSB Connect
-          </Link>
+          <Link to="/">UCSB Connect</Link>
         </h1>
         {!loading && (
           <Fragment>

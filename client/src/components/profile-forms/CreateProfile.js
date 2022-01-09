@@ -1,10 +1,16 @@
 import React, { useState, Fragment } from "react";
-import { Link, withRouter } from "react-router-dom";
+import {
+  Link,
+  withRouter,
+} from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile } from "../../actions/profile";
 
-const CreateProfile = ({ createProfile, history }) => {
+const CreateProfile = ({
+  createProfile,
+  history,
+}) => {
   const [formData, setFormData] = useState({
     company: "",
     website: "",
@@ -20,7 +26,10 @@ const CreateProfile = ({ createProfile, history }) => {
     instagram: "",
   });
 
-  const [displaySocialInputs, toggleSocialInputs] = useState(false);
+  const [
+    displaySocialInputs,
+    toggleSocialInputs,
+  ] = useState(false);
 
   const {
     company,
@@ -38,7 +47,10 @@ const CreateProfile = ({ createProfile, history }) => {
   } = formData;
 
   const onChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -47,40 +59,26 @@ const CreateProfile = ({ createProfile, history }) => {
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Create Your Profile</h1>
+      <h1 className="large text-primary">
+        Create Your Profile
+      </h1>
       <p className="lead">
-        <i className="fas fa-user"></i> Let's get some information to make your
-        profile stand out
+        <i className="fas fa-user"></i> Let's get
+        some information to make your profile
+        stand out
       </p>
-      <small>* = required field</small>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
-        <div className="form-group">
-          <select name="status" value={status} onChange={(e) => onChange(e)}>
-            <option value="0">* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Manager">Manager</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
-            <option value="Other">Other</option>
-          </select>
-          <small className="form-text">
-            Give us an idea of where you are at in your career
-          </small>
-        </div>
+      <form
+        className="form"
+        onSubmit={(e) => onSubmit(e)}
+      >
         <div className="form-group">
           <input
             type="text"
-            placeholder="Company"
+            placeholder="Major"
             name="company"
             value={company}
             onChange={(e) => onChange(e)}
           />
-          <small className="form-text">
-            Could be your own company or one you work for
-          </small>
         </div>
         <div className="form-group">
           <input
@@ -90,9 +88,6 @@ const CreateProfile = ({ createProfile, history }) => {
             value={website}
             onChange={(e) => onChange(e)}
           />
-          <small className="form-text">
-            Could be your own or a company website
-          </small>
         </div>
         <div className="form-group">
           <input
@@ -103,32 +98,21 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            City & state suggested (eg. Boston, MA)
+            City & state suggested (eg. Boston,
+            MA)
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Skills"
+            placeholder="Interests"
             name="skills"
             value={skills}
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
-          </small>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Github Username"
-            name="githubusername"
-            value={githubusername}
-            onChange={(e) => onChange(e)}
-          />
-          <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
+            Please use comma separated values (eg.
+            HTML,CSS,JavaScript,PHP)
           </small>
         </div>
         <div className="form-group">
@@ -138,12 +122,18 @@ const CreateProfile = ({ createProfile, history }) => {
             value={bio}
             onChange={(e) => onChange(e)}
           ></textarea>
-          <small className="form-text">Tell us a little about yourself</small>
+          <small className="form-text">
+            Tell us a little about yourself
+          </small>
         </div>
 
         <div className="my-2">
           <button
-            onClick={() => toggleSocialInputs(!displaySocialInputs)}
+            onClick={() =>
+              toggleSocialInputs(
+                !displaySocialInputs
+              )
+            }
             type="button"
             className="btn btn-light"
           >
@@ -211,8 +201,14 @@ const CreateProfile = ({ createProfile, history }) => {
           </Fragment>
         )}
 
-        <input type="submit" className="btn btn-primary my-1" />
-        <Link className="btn btn-light my-1" href="/dashboard">
+        <input
+          type="submit"
+          className="btn btn-primary my-1"
+        />
+        <Link
+          className="btn btn-light my-1"
+          href="/dashboard"
+        >
           Go Back
         </Link>
       </form>
@@ -224,4 +220,6 @@ CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
 };
 
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+export default connect(null, { createProfile })(
+  withRouter(CreateProfile)
+);

@@ -13,16 +13,22 @@ const Landing = ({ isAuthenticated }) => {
       <section class="landing">
         <div class="dark-overlay">
           <div class="landing-inner">
-            <h1 class="x-large">Developer Connector</h1>
+            <h1 class="x-large">UCSB CONNECT</h1>
             <p class="lead">
-              Create a developer profile/portfolio, share posts and get help
-              from other developers
+              Network with other students, find
+              your community
             </p>
             <div class="buttons">
-              <Link to="/register" class="btn btn-primary">
+              <Link
+                to="/register"
+                class="btn btn-primary"
+              >
                 Sign Up
               </Link>
-              <Link to="/login" class="btn btn-light">
+              <Link
+                to="/login"
+                class="btn btn-light"
+              >
                 Login
               </Link>
             </div>

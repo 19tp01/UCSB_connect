@@ -21,10 +21,16 @@ const ProfileTop = ({
 }) => {
   return (
     <div class="profile-top bg-primary p-2">
-      <img class="round-img my-1" src={avatar} alt="" />
+      <img
+        class="round-img my-1"
+        src={avatar}
+        alt=""
+      />
       <h1 class="large">{name}</h1>
       <p class="lead">
-        {status} {company && <span> at {company}</span>}
+        {company && (
+          <span>Studying {company}</span>
+        )}
       </p>
       <p>{location && <span>{location}</span>}</p>
       <div class="icons my-1">
